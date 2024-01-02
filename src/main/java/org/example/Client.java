@@ -65,7 +65,9 @@ public class Client {
               String searchWord = scanner.nextLine();
               write.println(searchWord);
               String returnLine = read.readLine();
+
               String[] files = returnLine.split("[,]",0);
+              System.out.println("number of files :" + files.length );
               for (int i = 0; i < files.length; i++) {
                 System.out.println(files[i]);
               }
@@ -75,11 +77,11 @@ public class Client {
             }
             break;
           }
-          case "hi":{
-            write.println(command);
-            write.println("hello server");
-            break;
-          }
+//          case "hi":{
+//            write.println(command);
+//            write.println("hello server");
+//            break;
+//          }
           case "exit":{
             write.println(command);
             String exitMassage = read.readLine();

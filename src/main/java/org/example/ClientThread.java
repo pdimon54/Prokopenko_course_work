@@ -45,12 +45,10 @@ public class ClientThread extends Thread {
               File resources = new File("C:\\Users\\Dmytro\\OneDrive\\Рабочий стол\\IASA CS\\4 курс\\1 семестр\\CW\\CW\\resources");
               System.out.println("Number of threads:" + num);
               List<File> listFiles = FileWorker.buildDocumentsList(resources);
-              System.out.println(listFiles.get(456));
-              System.out.println(listFiles.size());
+              //System.out.println(listFiles.get(456));
+              //System.out.println(listFiles.size());
               long start = System.currentTimeMillis();
-              System.out.println("+++++++");
               indexThreadsManager.indexing(num, listFiles);
-              System.out.println("+++++++");
               long time = System.currentTimeMillis() - start;
 
               printWriter.println("Time build: " + time);
@@ -66,29 +64,30 @@ public class ClientThread extends Thread {
         }
         case ("find"): {
             try {
-              System.out.println("-----");
               String word = bufferedReader.readLine();
-              System.out.println("-----");
               System.out.println(word);
-              System.out.println(indexThreadsManager.indexMap.get(word).toString());
-              printWriter.println(indexThreadsManager.indexMap.get(word).toString());
+              //System.out.println(indexThreadsManager.indexMap.get(word).toString());
+              if (indexThreadsManager.indexMap.isPresent(word))
+                printWriter.println("null");
+              else
+                printWriter.println(indexThreadsManager.indexMap.get(word).toString());
 
             } catch (IOException e) {
               throw new RuntimeException(e);
           }
           break;
         }
-        case ("hi"): {
-
-          try {
-            String answer = bufferedReader.readLine();
-            System.out.println(answer);
-
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-          break;
-        }
+//        case ("hi"): {
+//
+//          try {
+//            String answer = bufferedReader.readLine();
+//            System.out.println(answer);
+//
+//          } catch (IOException e) {
+//            throw new RuntimeException(e);
+//          }
+//          break;
+//        }
         case ("exit"): {
           printWriter.write("thanks");
           try {

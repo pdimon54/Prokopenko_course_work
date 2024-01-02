@@ -37,19 +37,14 @@ public class IndexThread extends Thread{
       String fileData = new String(bytesFileData, StandardCharsets.UTF_8);
       String[] words = fileData.split("\\W+");
       Arrays.stream(words).forEach(String::toLowerCase);
-      System.out.println("flag1");
       List<String> wordsList = Arrays.stream(words).toList();
-      System.out.println("flag2");
       for (String word:wordsList) {
-        System.out.println("flag3");
         if(IndexThreadsManager.indexMap.isPresent(word)){
           IndexThreadsManager.indexMap.get(word).add(files.get(i).toPath().toString());
-          System.out.println("flag4");
         }else {
           Set<String> filesStr = new HashSet<>();
           filesStr.add(files.get(i).toPath().toString());
           IndexThreadsManager.indexMap.put(word,filesStr);
-          System.out.println("flag5");
         }
       }
 
