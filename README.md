@@ -13,7 +13,7 @@
 
 Для встановлення програми скористайтеся наступними кроками:
 
-1. Склонуйте репозиторій за посиланням: [https://github.com/pdimon54/Prokopenko_course_work.git](https://github.com/pdimon54/Prokopenko_course_work.git)
+1. Склонуйте репозиторій за допомогою команди:[git clone https://github.com/pdimon54/Prokopenko_course_work.git]
 2. Відкрийте термінал та перейдіть до склонованого каталогу.
 
 ## Запуск сервера
