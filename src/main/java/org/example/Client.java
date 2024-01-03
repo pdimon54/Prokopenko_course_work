@@ -65,7 +65,10 @@ public class Client {
               String searchWord = scanner.nextLine();
               write.println(searchWord);
               String returnLine = read.readLine();
-
+              if(returnLine.equals("null")){
+                System.out.println("Word is not contains in the files");
+                break;
+              }
               String[] files = returnLine.split("[,]",0);
               System.out.println("number of files :" + files.length );
               for (int i = 0; i < files.length; i++) {

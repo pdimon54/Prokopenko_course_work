@@ -66,11 +66,7 @@ public class ClientThread extends Thread {
             try {
               String word = bufferedReader.readLine();
               System.out.println(word);
-              //System.out.println(indexThreadsManager.indexMap.get(word).toString());
-              if (indexThreadsManager.indexMap.isPresent(word))
-                printWriter.println("null");
-              else
-                printWriter.println(indexThreadsManager.indexMap.get(word).toString());
+              printWriter.println(indexThreadsManager.indexMap.get(word));
 
             } catch (IOException e) {
               throw new RuntimeException(e);
