@@ -45,8 +45,6 @@ public class ClientThread extends Thread {
               File resources = new File("C:\\Users\\Dmytro\\OneDrive\\Рабочий стол\\IASA CS\\4 курс\\1 семестр\\CW\\CW\\resources");
               System.out.println("Number of threads:" + num);
               List<File> listFiles = FileWorker.buildDocumentsList(resources);
-              //System.out.println(listFiles.get(456));
-              //System.out.println(listFiles.size());
               long start = System.currentTimeMillis();
               indexThreadsManager.indexing(num, listFiles);
               long time = System.currentTimeMillis() - start;
